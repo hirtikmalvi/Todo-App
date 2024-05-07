@@ -11,14 +11,44 @@ function App() {
 
   //Add button in AddToDo component (Adding Items)
   const addButtonHandle = (event, enteredToDo, enteredDate) => {
-    const newToDoItem = [
-      ...toDoItemsObj,
-      {
-        toDoName: enteredToDo,
-        toDoDate: dateFormat(enteredDate, "dd-mmmm-yyyy"),
-      },
-    ];
-    setToDoItemsObj(newToDoItem);
+    /* One way to setToDoItemsObj
+    // const newToDoItem = [
+    //   ...toDoItemsObj,
+    //   {
+    //     toDoName: enteredToDo,
+    //     toDoDate: dateFormat(enteredDate, "dd-mmmm-yyyy"),
+    //   },
+    // ];
+    // setToDoItemsObj(newToDoItem);
+    */
+
+    //Second Way.... (Lengthyy Way)
+    /*
+    setToDoItemsObj((currValue) => {
+      //In PPT Point. 34
+      //Here currValue means Previous Values(Array) of toDoItemsObj.
+      const newToDoItem = [
+        ...currValue,
+        {
+          toDoName: enteredToDo,
+          toDoDate: dateFormat(enteredDate, "dd-mmmm-yyyy"),
+        },
+      ];
+      return newToDoItem;
+    });
+    */
+
+    //Second Way.... (Compact Way)
+    setToDoItemsObj((currValue) =>
+      //In PPT Point. 34
+      [
+        ...currValue,
+        {
+          toDoName: enteredToDo,
+          toDoDate: dateFormat(enteredDate, "dd-mmmm-yyyy"),
+        },
+      ]
+    );
   };
 
   //To Delete the Item

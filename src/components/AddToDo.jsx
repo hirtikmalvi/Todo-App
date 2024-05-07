@@ -17,7 +17,7 @@ function AddToDo({ addButtonHandle }) {
       enteredToDoElement.current.value = "";
       enteredDateElement.current.value = "";
     } else {
-      alert("Enter the Values!");
+      alert("Please, Enter the Values!");
     }
   };
 
