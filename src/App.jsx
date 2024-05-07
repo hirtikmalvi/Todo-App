@@ -4,7 +4,6 @@ import ToDoItems from "./components/ToDoItems";
 import "./App.css";
 import { useState } from "react";
 import EmptyListMessage from "./components/EmptyListMessage";
-import moment from "moment";
 import dateFormat from "dateformat";
 
 function App() {

@@ -1,3 +1,6 @@
+import { MdDeleteForever } from "react-icons/md";
+import styles from "./AddToDo.module.css";
+
 function ToDoItem({ toDoName, toDoDate, deleteItem }) {
   return (
     <div className="container">
@@ -12,7 +15,7 @@ function ToDoItem({ toDoName, toDoDate, deleteItem }) {
               deleteItem(event, toDoName, toDoDate);
             }}
           >
-            Delete
+            <MdDeleteForever className={styles.buttonSize} />
           </button>
         </div>
       </div>
