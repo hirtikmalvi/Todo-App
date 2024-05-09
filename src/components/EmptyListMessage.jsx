@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import styles from "./EmptyListMessage.module.css";
+import { toDoItemsContext } from "../store/todo-items-store";
 
-function EmptyListMessage({ toDoItemsObj }) {
+function EmptyListMessage() {
+  const { toDoItemsObj } = useContext(toDoItemsContext);
+
   return (
     <>
       {toDoItemsObj.length == 0 ? (

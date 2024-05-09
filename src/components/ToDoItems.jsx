@@ -1,13 +1,16 @@
+import { useContext } from "react";
+import { toDoItemsContext } from "../store/todo-items-store";
 import ToDoItem from "./ToDoItem";
 
-let ToDoItems = ({ toDoItemsProps, deleteItem }) => {
+let ToDoItems = () => {
+  const { toDoItemsObj } = useContext(toDoItemsContext);
+
   return (
     <>
       <div className="todo-items-container">
-        {toDoItemsProps.map((item) => (
+        {toDoItemsObj.map((item) => (
           <ToDoItem
             key={item.toDoName}
-            deleteItem={deleteItem}
             toDoName={item.toDoName}
             toDoDate={item.toDoDate}
           ></ToDoItem>

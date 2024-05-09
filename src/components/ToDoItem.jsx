@@ -1,7 +1,11 @@
 import { MdDeleteForever } from "react-icons/md";
 import styles from "./AddToDo.module.css";
+import { useContext } from "react";
+import { toDoItemsContext } from "../store/todo-items-store";
 
-function ToDoItem({ toDoName, toDoDate, deleteItem }) {
+function ToDoItem({ toDoName, toDoDate }) {
+  const { deleteItem } = useContext(toDoItemsContext);
+
   return (
     <div className="container">
       <div className="row new-row">
